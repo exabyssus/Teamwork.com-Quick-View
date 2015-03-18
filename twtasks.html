@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teamwork Quick View</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#F19019">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,100,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+        <link href='/css/ionicons.min.css' rel='stylesheet' type='text/css'>
+        <link href='/css/style.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+
+      <header>
+          <div class="container">
+              <a id="company" href=""><img src="" class="image"><div class="title cp-item"></div><div class="cp-item">/</div><div class="user cp-item"></div></a>
+              <div id="open_settings" class="pull-right"><i class="ion-ios-gear"></i></div>
+          </div>
+      </header>
+
+      <div class="container">
+          <div id="tasks" class="task-list">
+              <h1>Your tasks</h1>
+          </div>
+          <div id="tasks-anyone" class="task-list">
+              <h1>Tasks for anyone</h1>
+          </div>
+
+          <div id="no-tasks">Cool, you have completed all your tasks! Take a brake!</div>
+
+      </div>
+
+
+      <div id="loading"></div>
+
+      <div id="settings">
+        <div class="form">
+            <h2>Settings</h2>
+
+            <div class="form-horizontal">
+                <div class="form-group">
+                <div class="col-sm-4">
+                    <label class="form-label" for="form_api_key">API Key <a href="http://developer.teamwork.com/enabletheapiandgetyourkey" target="_blank">(?)</a></label>
+                </div>
+                <div class="col-sm-8">
+
+                        <input id="form_api_key" value="" class="form-control">
+                    </div>
+                </div>
+
+                <div id="save_settings" class="btn btn-primary btn-lg">Save</div>
+            </div>
+
+        </div>
+      </div>
+
+      <script src="jquery.js"></script>
+      <script src="moment.min.js"></script>
+      <script src="main.js"></script>
+    </body>
+</html>

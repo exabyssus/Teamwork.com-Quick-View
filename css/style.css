@@ -1,0 +1,239 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: #f6f6f6;
+    padding-bottom: 50px;
+}
+
+h1 {
+    font-weight: 100;
+    text-align: center;
+    margin: 50px 0;
+    font-size: 59px;
+}
+
+h2 {
+    color: #aaa;
+    font-weight: 100;
+    margin: 0;
+}
+
+header {
+    padding: 0px;
+    background: #fff;
+    border-bottom: 2px solid #F2F2F2;
+    display: none;
+}
+
+#company .image {
+    height: 40px;
+    width: 40px;
+    float: left;
+    margin-right: 10px;
+}
+
+#company .cp-item {
+    line-height: 40px;
+    float: left;
+    font-size: 12px;
+    color: #000;
+    margin-right: 10px;
+}
+
+#open_settings {
+    font-size: 20px;
+    color: #ccc;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 40px;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+}
+
+#open_settings:hover {
+    color: #939393;
+    background: #F7F7F7;
+}
+
+.container{
+    max-width: 900px;
+}
+
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 400px;
+  height: 400px;
+  width: 400px;
+  margin: -200px;
+  color: #ccc;
+  z-index: -1;
+  text-align: center;
+  line-height: 400px;
+  overflow: hidden;
+}
+
+#settings{
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.4);
+    display: none;
+}
+
+#settings .form{
+	position: absolute;
+	left: 50%;
+	width: 800px;
+	margin-left: -400px;
+	top: 50%;
+	margin-top: -200px;
+	min-height: 400px;
+	background: rgba(251, 251, 251, 1);
+	box-shadow: 0 0 100px rgba(0, 0, 0, .4);
+    padding: 50px;
+}
+
+#settings .form form {
+    margin-top: 50px;
+}
+
+#save_settings {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+}
+
+.task-list {
+	display: none;
+}
+
+#no-tasks {
+    margin-top: 200px;
+    border: 5px solid #efefef;
+    font-size: 60px;
+    font-weight: 100;
+    text-align: center;
+    padding: 50px;
+    color: #8C8C8C;
+    display: none;
+}
+
+.task {
+    font-size: 19px;
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    -webkit-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.task .content{
+    padding-left: 40px;
+    line-height: 20px;
+}
+
+.task .content i {
+    color: #ccc;
+}
+
+.task.open {
+    margin: 30px -30px;
+    box-shadow: 0 0 90px rgba(0, 0, 0, 0.1);
+}
+
+.task .description{
+    margin: 20px 0;
+	font-size: 14px;
+	line-height: 18px;
+	color: #666;
+    display: none;
+}
+
+.task.open .description{
+    display: block;
+}
+
+.task .check {
+    font-family: "Ionicons";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: #ccc;
+    font-size: 25px;
+    display: block;
+    line-height: 20px;
+    cursor: pointer;
+    padding: 20px;
+    height: 59px;
+}
+
+.task .check:after{
+    content: "\f372";
+}
+
+.task.checked .content {
+    color: #AEAEAE;
+    text-decoration: line-through;
+}
+
+.task.checked .check:after{
+    content: "\f373";
+}
+
+.project {
+	color: #ccc;
+	font-size: 18px;
+	text-align: right;
+}
+
+.info {
+    margin-top: 20px;
+    color: #949494;
+}
+
+.info a.sm-info{
+    color: #949494;
+    text-decoration: underline;
+}
+
+.info .sm-info {
+    font-size: 12px;
+    float: left;
+    margin-right: 20px;
+}
+
+.info .sm-info.project{
+    float: right;
+    margin-right: 0;
+}
+
+.btn {
+    border-radius: 0;
+    font-size: 100%;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.alert {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border-radius: 0;
+    z-index: 1000;
+}
