@@ -56,16 +56,21 @@ function apiRequest(url, callback, type){
 				}				
             },
             error: function(error) {
-                var alt_id = 'alt-' + Math.floor(Math.random() * 100000);
-                $('.alert').remove();
-                $('body').prepend('<div class="alert alert-danger '+alt_id+'">Server Error, please check your API key</div>');
-                openSettings();
 
-                setTimeout(function(){
-                    $('.'+alt_id).fadeOut(200, function(){
-                        $(this).remove();
-                    });
-                }, 2000)
+                setTimeout(function () {
+
+                    var alt_id = 'alt-' + Math.floor(Math.random() * 100000);
+                    $('.alert').remove();
+                    $('body').prepend('<div class="alert alert-danger '+alt_id+'">Server Error, please check your API key</div>');
+                    openSettings();
+
+                    setTimeout(function(){
+                        $('.'+alt_id).fadeOut(200, function(){
+                            $(this).remove();
+                        });
+                    }, 2000)
+
+                }, 1000);
             }
 
         });
@@ -95,6 +100,7 @@ function getSettings(callback){
 		chrome.storage.sync.get(null, function(res){
 			settings = res;
             callback();
+
 		});
 	
 }
@@ -116,6 +122,9 @@ function getTasks(){
                 loadTasks();
             });
         }catch (e){
+
+            console.log(e);
+            alert('!');
             var alt_id = 'alt-' + Math.floor(Math.random() * 100000);
             $('body').prepend('<div class="alert alert-danger '+alt_id+'">Server Error, please check your API key!!</div>');
             openSettings();
@@ -234,9 +243,11 @@ $(function(){
         {
             getTasks();
 
+            /*
             setInterval(function(){
-                //getTasks();
+                getTasks();
             }, 30000);
+            */
         }
 
     });

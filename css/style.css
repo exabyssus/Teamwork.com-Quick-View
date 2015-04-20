@@ -75,6 +75,45 @@ header {
   overflow: hidden;
 }
 
+#loading:before {
+    content: "";
+    width: 92px;
+    height: 500px;
+    background: rgb(246, 246, 246);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .3;
+    -webkit-animation: move 2s infinite;
+    animation: move 2s infinite;
+}
+
+@keyframes move {
+    from {
+        opacity: .3;
+        width: 92px;
+        transform: translate(-100px, 0) skew(-21deg);
+    }
+    to {
+        opacity: .5;
+        width: 142px;
+        transform: translate(500px, 0) skew(-21deg);
+    }
+}
+
+@-webkit-keyframes move {
+    from {
+        opacity: .3;
+        width: 92px;
+        transform: translate(-100px, 0) skew(-21deg);
+    }
+    to {
+        opacity: .5;
+        width: 142px;
+        transform: translate(500px, 0) skew(-21deg);
+    }
+}
+
 #settings{
     content: "";
     position: fixed;

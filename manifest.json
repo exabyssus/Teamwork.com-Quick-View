@@ -1,7 +1,7 @@
 {
-  "name": "Teamwork.com Quick View",
+  "name": "Teamwork PM Quick View",
   "description": "See your open tasks from Teamwork.com every time you open new tab",
-  "version": "0.9",
+  "version": "1",
   "incognito": "split",
   "chrome_url_overrides": {
     "newtab": "twtasks.html"
