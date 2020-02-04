@@ -1,10 +1,19 @@
-﻿var settings = { api_key : false};
+﻿var settings = { api_key : false, region: 'us'};
 var userData = {};
 var settingsWindow;
-
+ 
 function closeSettings(){
 
 	settingsWindow.fadeOut(200);
+}
+
+function getFullPath(path)
+{
+    if (settings.region === 'eu') {
+        return 'https://authenticate.eu.teamwork.com/' + path;
+    }
+
+    return 'https://authenticate.teamwork.com/' + path;
 }
 
 function openSettings(){
@@ -26,6 +35,7 @@ function openSettings(){
     }
 
 	$('#form_api_key').val(settings.api_key);
+    $('#form_region').val(settings.region);
 	
 	settingsWindow.fadeIn(200);
  
@@ -43,7 +53,6 @@ function apiRequest(url, callback, type){
             url: url,
             type: type,
 			beforeSend: function(xhr) {
-                console.log(settings.api_key);
 			  xhr.setRequestHeader("Authorization", "Basic " + btoa(settings.api_key + ":x"));
 			},
 			processData: false,
@@ -78,7 +87,8 @@ function apiRequest(url, callback, type){
 
 function saveSettings(){
         settings['api_key'] = $('#form_api_key').val();
-  
+        settings['region'] = $('#form_region').val();
+
 		chrome.storage.sync.set(settings, function() {
 
         var alt_id = 'alt-' + Math.floor(Math.random() * 100000);
@@ -111,13 +121,19 @@ function getTasks(){
 	{
 
         try{
-            apiRequest('https://authenticate.teamworkpm.net/authenticate.json', function(response){
+            apiRequest(getFullPath('authenticate.json'), function(response){
+
                 userData.userId = response.account.userId;
                 userData.URL = response.account.URL;
 
                 $('#company .title').html(response.account.companyname);
                 $('#company .user').html(response.account.firstname);
-                $('#company .image').attr('src', response.account.logo);
+                $('#company .image').attr('src', response.account['avatar-url']);
+
+                if (! response.account['avatar-url']) {
+                    $('#company .image').remove();
+                }
+                
 
                 loadTasks();
             });
